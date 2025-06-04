@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e7f3fe;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Check Grade</h1>
+  <button onclick="checkGrade()">Enter Marks</button>
+  <div id="result"></div>
+
+  <script>
+    function checkGrade() {
+      let marks = prompt("Enter your marks:");
+      marks = Number(marks);
+
+      let grade = "";
+
+      if (isNaN(marks) || marks < 0 || marks > 100) {
+        grade = "Please enter valid marks between 0 and 100.";
+      } else if (marks >= 90) {
+        grade = "Grade: S";
+      } else if (marks >= 80) {
+        grade = "Grade: A";
+      } else if (marks >= 70) {
+        grade = "Grade: B";
+      } else if (marks >= 60) {
+        grade = "Grade: C";
+      } else if (marks >= 50) {
+        grade = "Grade: D";
+      } else if (marks >= 40) {
+        grade = "Grade: E";
+      } else {
+        grade = "Fail";
+      }
+
+      document.getElementById("result").innerText = grade;
+    }
+  </script>
+
+</body>
+</html>
