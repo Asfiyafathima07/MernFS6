@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Repeat Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff9e6;
+      text-align: center;
+      padding-top: 80px;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #ff9933;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Repeat Message</h1>
+  <button onclick="printMessage()">Start</button>
+  <div id="result"></div>
+  <script>
+    function printMessage() {
+      let times = prompt("How many times do you want to print the message?");
+      let msg = prompt("Enter the message to print:");
+      times = Number(times);
+      if (isNaN(times) || times < 1) {
+        document.getElementById("result").innerText = "Please enter a valid number greater than 0.";
+        return;
+      }
+      let output = "";
+      for (let i = 1; i <= times; i++) {
+        output += i + ". " + msg + "<br>";
+      }
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
